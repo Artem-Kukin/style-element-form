@@ -1,0 +1,279 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.wrapper {
+  width: 100%;
+  min-height: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.container {
+  max-width: 1210px;
+  margin: 0 auto;
+  padding-inline: 20px;
+}
+body {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  background-color: #21ae60;
+  font-size: 16px;
+  line-height: 150%;
+}
+
+.block-form {
+  padding: 25px;
+  color: #f0f0f0;
+}
+
+.block-form__title {
+  font-size: 32px;
+  margin-bottom: 25px;
+}
+
+.checkbox input {
+  display: none;
+}
+.checkbox {
+  position: relative;
+  cursor: pointer;
+  width: fit-content;
+  margin-bottom: 10px;
+}
+
+.checkbox::before,
+.checkbox.active::before {
+  transition: background-color 2s ease;
+}
+.checkbox::before,
+.checkbox::after {
+  content: "";
+  bottom: 0;
+  display: inline-block;
+  border-radius: 10px;
+}
+
+.checkbox::before {
+  position: relative;
+  background-color: #f0f0f0;
+  width: 50px;
+  height: 20px;
+  left: 0;
+  transform: translateY(25%);
+}
+
+.checkbox::after {
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  background-color: #9b53e6;
+  left: -1px;
+  box-shadow: 2px 0 3px 1px rgba(0, 0, 0, 0.3);
+}
+
+.checkbox.active::before {
+  background-color: #9b53e6;
+}
+
+.checkbox.active {
+  color: #9b53e6;
+}
+
+.checkbox.active::after {
+  background-color: #f0f0f0;
+  transform: translateX(133%);
+}
+.checkbox::after,
+.checkbox.active::after {
+  transition: all 1s
+    linear(
+      0 0%,
+      0 2.27%,
+      0.02 4.53%,
+      0.04 6.8%,
+      0.06 9.07%,
+      0.1 11.33%,
+      0.14 13.6%,
+      0.25 18.15%,
+      0.39 22.7%,
+      0.56 27.25%,
+      0.77 31.8%,
+      1 36.35%,
+      0.89 40.9%,
+      0.85 43.18%,
+      0.81 45.45%,
+      0.79 47.72%,
+      0.77 50%,
+      0.75 52.27%,
+      0.75 54.55%,
+      0.75 56.82%,
+      0.77 59.1%,
+      0.79 61.38%,
+      0.81 63.65%,
+      0.85 65.93%,
+      0.89 68.2%,
+      1 72.7%,
+      0.97 74.98%,
+      0.95 77.25%,
+      0.94 79.53%,
+      0.94 81.8%,
+      0.94 84.08%,
+      0.95 86.35%,
+      0.97 88.63%,
+      1 90.9%,
+      0.99 93.18%,
+      0.98 95.45%,
+      0.99 97.73%,
+      1 100%
+    );
+}
+
+.radiobutton__item input {
+  display: none;
+}
+.radiobutton__item {
+  position: relative;
+  cursor: pointer;
+  width: fit-content;
+  margin-bottom: 10px;
+}
+
+.radiobutton__item::before {
+  position: relative;
+  background-color: #f0f0f0;
+  transform: translateY(25%);
+}
+
+.radiobutton__item::before,
+.radiobutton__item::after,
+.radiobutton__item.active::after {
+  content: "";
+  top: 0;
+  left: 0;
+  width: 25px;
+  height: 25px;
+  display: inline-block;
+  border-radius: 50%;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 25px;
+  height: 25px;
+  display: inline-block;
+  border-radius: 50%;
+}
+
+.radiobutton__item::after {
+  position: absolute;
+  transform: translateY(25%) scale(0);
+}
+
+.radiobutton__item.active::after {
+  position: absolute;
+  background-color: #f0f0f0;
+  transform: translateY(25%) scale(0.8);
+  transition: all 2s
+    linear(
+      0 0%,
+      0 2.27%,
+      0.02 4.53%,
+      0.04 6.8%,
+      0.06 9.07%,
+      0.1 11.33%,
+      0.14 13.6%,
+      0.25 18.15%,
+      0.39 22.7%,
+      0.56 27.25%,
+      0.77 31.8%,
+      1 36.35%,
+      0.89 40.9%,
+      0.85 43.18%,
+      0.81 45.45%,
+      0.79 47.72%,
+      0.77 50%,
+      0.75 52.27%,
+      0.75 54.55%,
+      0.75 56.82%,
+      0.77 59.1%,
+      0.79 61.38%,
+      0.81 63.65%,
+      0.85 65.93%,
+      0.89 68.2%,
+      1 72.7%,
+      0.97 74.98%,
+      0.95 77.25%,
+      0.94 79.53%,
+      0.94 81.8%,
+      0.94 84.08%,
+      0.95 86.35%,
+      0.97 88.63%,
+      1 90.9%,
+      0.99 93.18%,
+      0.98 95.45%,
+      0.99 97.73%,
+      1 100%
+    );
+}
+
+.radiobutton__item.active::before {
+  background-color: #9b53e6;
+  transition: all 1s ease;
+}
+
+.radiobutton__item.active {
+  color: #9b53e6;
+}
+
+.button {
+  position: relative;
+  line-height: 60px;
+  padding-inline: 11px;
+  display: inline-block;
+  cursor: pointer;
+  text-transform: uppercase;
+  background-color: #f0f0f0;
+  border: none;
+  border-radius: 3px;
+  letter-spacing: 5px;
+  overflow: hidden;
+}
+
+.button span {
+  position: relative;
+  z-index: 1;
+ background-color: #f0f0f0;
+ border-radius: 15px;
+}
+
+.button::before {
+ top: 0;
+}
+
+.button::before, .button::after {
+  content: "";
+ position: absolute; 
+ left: 0;
+ width: 100%;
+ height: 10%;
+ display: block;
+ background-color: #9b53e6; 
+transition: all 2s linear(0 0%, 0.22 2.1%, 0.86 6.5%, 1.11 8.6%, 1.3 10.7%, 1.35 11.8%, 1.37 12.9%, 1.37 13.7%, 1.36 14.5%, 1.32 16.2%, 1.03 21.8%, 0.94 24%, 0.89 25.9%, 0.88 26.85%, 0.87 27.8%, 0.87 29.25%, 0.88 30.7%, 0.91 32.4%, 0.98 36.4%, 1.01 38.3%, 1.04 40.5%, 1.05 42.7%, 1.05 44.1%, 1.04 45.7%, 1 53.3%, 0.99 55.4%, 0.98 57.5%, 0.99 60.7%, 1 68.1%, 1.01 72.2%, 1 86.7%, 1 100%);
+}
+
+.button:hover::before, 
+.button:hover::after {
+ height: 100%;
+
+}
+
+.button::after {
+  bottom: 0;
+}
+
+
